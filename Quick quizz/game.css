@@ -1,0 +1,106 @@
+:root {
+  /* color */
+  --clr-background: rgb(217, 235, 235);
+  --clr-font-main: #333;
+  --clr-h1: rgb(46, 168, 199);
+  --clr-button: rgb(33, 109, 128);
+  --clr-btn-background: rgb(209, 230, 236);
+  --clr-button-hover: rgb(183, 229, 235);
+  --clr-letter: white;
+  --clr-correct: rgb(53, 212, 53);
+  --clr-wrong: rgb(187, 42, 42);
+  --clr-progress-bar-full: rgb(26, 175, 185);
+  /* constants */
+  --transition: all 0.3s linear;
+  --shadow: 0 0.4rem 1.4rem 0 rgba(60, 97, 165, 0.5);
+  --clr-border: 0.1rem solid rgb(39, 134, 158, 0.5);
+  --clr-border-progress-bar: 0.2rem solid rgb(26, 175, 185);
+}
+
+.choice-container {
+  display: flex;
+  margin-bottom: 0.5rem;
+  width: 100%;
+  font-size: 1.8rem;
+  border: var(--clr-border);
+  background-color: var(--clr-btn-background);
+  transition: var(--transition);
+}
+
+.choice-container:hover {
+  cursor: pointer;
+  transform: translateY(-0.2rem);
+  box-shadow: var(--shadow);
+}
+
+.choice-text {
+  color: var(--clr-button);
+  padding: 1.5rem;
+  width: 100%;
+}
+
+.choice-prefix {
+  padding: 1.5rem 2.5rem;
+  background-color: var(--clr-button);
+  color: var(--clr-letter);
+}
+
+.correct {
+  background-color: var(--clr-correct);
+}
+
+.wrong {
+  background-color: var(--clr-wrong);
+}
+
+.wrong > .choice-text {
+  color: var(--clr-background);
+}
+
+#hud {
+  display: flex;
+  justify-content: space-between;
+}
+
+.hud-prefix {
+  font-size: 1.4rem;
+  text-transform: capitalize;
+  text-align: center;
+}
+
+.hud-text {
+  text-align: center;
+}
+
+#progress-bar {
+  width: 18rem;
+  height: 3.2rem;
+  border: var(--clr-border-progress-bar);
+  margin-top: 1.5rem;
+}
+
+#progressBarFull {
+  background-color: var(--clr-progress-bar-full);
+  width: 0;
+  height: 2.8rem;
+}
+
+/* loading */
+
+#loader {
+  border: 1.6rem solid white;
+  border-radius: 50%;
+  border-top: 1.6rem solid var(--clr-button);
+  width: 12rem;
+  height: 12rem;
+  animation: spin linear 2s infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

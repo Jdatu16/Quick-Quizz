@@ -1,0 +1,149 @@
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--clr-font-main);
+  font-size: 75%;
+}
+
+:root {
+  /* color */
+  --clr-background: rgb(217, 235, 235);
+  --clr-font-main: #333;
+  --clr-h1: rgb(46, 168, 199);
+  --clr-button: rgb(39, 134, 158);
+  --clr-btn-background: rgb(209, 230, 236);
+  --clr-button-hover: rgb(183, 229, 235);
+  /* constants */
+  --transition: all 0.3s linear;
+  --shadow: 0 0.4rem 1.4rem 0 rgba(86, 185, 235, 0.5);
+  --clr-border: 0.1rem solid rgb(39, 134, 158, 0.5);
+  --width-btn: 18rem;
+  --ff-size-btn: 1.8rem;
+  --btn-margin: 0.5rem;
+}
+
+body {
+  background-color: var(--clr-background);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin-bottom: 1rem;
+}
+
+h1 {
+  margin-bottom: 5rem;
+  font-size: 5rem;
+  color: var(--clr-h1);
+}
+h2 {
+  margin-bottom: 4rem;
+  font-size: 4rem;
+  font-weight: 700;
+}
+h3 {
+  font-size: 2.5rem;
+  font-weight: 500;
+}
+h1 > span {
+  font-size: 2.4rem;
+  font-weight: 400;
+}
+
+/* content styiling */
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.container > * {
+  width: 100%;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-center {
+  justify-content: center;
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.hidden {
+  display: none;
+}
+
+/* buttons */
+
+.btn {
+  font-size: var(--ff-size-btn);
+  padding: 0.6rem 0;
+  width: var(--width-btn);
+  text-align: center;
+  border: var(--clr-border);
+  margin-bottom: var(--btn-margin);
+  text-decoration: none;
+  background: var(--clr-btn-background);
+  color: var(--clr-button);
+  transition: var(--transition);
+}
+
+.btn:hover {
+  background: var(--clr-button);
+  color: var(--clr-button-hover);
+  cursor: pointer;
+  transform: translateY(-0.15rem);
+  box-shadow: var(--shadow);
+}
+
+.btn[disabled]:hover {
+  cursor: not-allowed;
+  box-shadow: none;
+  transform: none;
+  background-color: var(--clr-btn-background);
+  color: var(--clr-button);
+}
+
+/* endpage forms */
+
+form {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+input {
+  width: 100%;
+  width: var(--width-btn);
+  padding: 0.6rem 4rem;
+  font-size: var(--ff-size-btn);
+  margin-bottom: var(--btn-margin);
+  border: var(--clr-border);
+}
+
+input::placeholder {
+  color: rgba(87, 87, 87, 0.562);
+}
